@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        .content{
+            width:1000px;
+            height:500px;
+            margin:0 auto;
+        }
+        .select,.btn{
+            float:left;
+        }
+        #left,#right{
+            height:200px;
+            width:100px;
+            font-size:20px;
+            font-family:微软雅黑;
+            font-weight:800;
+            color:brown;
+        }
+        .btn{
+            width: 300px;height: 100px;
+        }
+        input{
+            width:100px;
+            height:30px;
+            margin:10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="select">
+            <select id="left" size="10" multiple style="width: 100px;">
+                <option>蛋糕</option>
+                <option>水果</option>
+                <option>巧克力</option>
+                <option>瓜子</option>
+                <option>花生</option>
+                
+            </select>
+        </div>
+            <div class="btn" >
+                <input type="button" value="单选" onclick="oneR()" />
+                <input type="button" value="单个删除" onclick="oneL()" />
+                <input type="button" value="双选" onclick="twoR()" />
+                <input type="button" value="全部删除" onclick="allL()" />
+                <input type="button" value="全选" onclick="allR()" />
+                
+                
+            </div>
+            <div class="select">
+                <select id="right" size="10" style="width: 100px;" multiple="multiple"></select>
+            </div>
+       
+    </div>
+    <script type="text/javascript">
+     window.onload = function(){}
+      //获取select对象
+           var lselect=document.getElementById("left");
+           var rselect=document.getElementById("right");
+           //获取lselect和roptions对象中的所有option
+           var loptions=lselect.options;
+           var roptions = rselect.options;
+           
+           function oneR() {
+               for (var i = 0; i < loptions.length; i++) {
+                   var op = loptions[i];
+                   if (op.selected) {
+                       rselect.appendChild(op);
+                       break;
+                   }
+               }
+           }
+           function twoR() {
+               for (var i = 0; i < loptions.length; i++) {
+                   var op = loptions[i];
+                   if (op.selected) {
+                       rselect.appendChild(op);
+                       i--;
+                   }
+               }
+           }
+
+           function allR() {
+               for (var i = 0; i < loptions.length; ) {
+                   var op = loptions[i];
+                   
+                       rselect.appendChild(op);
+                      
+                   
+               }
+           }
+           function oneL() {
+               
+               for (var i = 0; i < roptions.length; i++) {
+                   var op = roptions[i];
+                   if (op.selected) {
+                       lselect.appendChild(op);
+                       break;
+                   }
+               }
+           }
+           function twoL() {
+               for (var i = 0; i < roptions.length; i++) {
+                   var op = roptions[i];
+                   if (op.selected) {
+                       lselect.appendChild(op);
+                       i--;
+                   }
+               }
+
+        }
+        function allL() {
+            for (var i = 0; i < roptions.length;) {
+                var op = roptions[i];
+                
+                    lselect.appendChild(op);
+                   
+            }
+        }
+               </script>
+</body>
+
+
+</html>
