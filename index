@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>邵倩楠第三次</title>
+	<meta charset="utf-8" />
+    <style>
+        body{
+            margin:0;
+            background:#d5e9ea;
+        }
+        .triangle1{
+            margin:100px 50px;
+            width:200px;
+            
+            
+            float:left;
+
+        }
+        #font{
+            margin-left:100px;
+            clear:left;
+            color:#5295a3;
+            font-family:微软雅黑;
+            /*width:300px;
+            height:300px;*/
+            font-size:40px;
+            
+        }
+    </style>
+</head>
+<body >
+    <div class="triangle1">
+        <script>
+        //等腰三角形
+        document.write("等腰三角形");
+        document.write("</br></br>");
+        for (var i = 0; i < 6; i++) {
+            for (var j = 6; j > i; j--) {
+                document.writeln(" &nbsp &nbsp");
+            }
+            for (var k = 0; k < 2 * i + 1; k++) {
+                document.writeln("&nbsp*");
+            }
+            document.writeln("</br>")
+        }
+            </script>
+    </div>
+    <div class="triangle1">
+        <script>
+        //等腰三角形
+            //实心菱形
+            document.write("实心菱形");
+            document.write("</br>");
+            for (var i = 0; i < 6; i++) {
+                for (var j = 6; j > i; j--) {
+                    document.writeln("&nbsp &nbsp");
+                }
+                for (var k = 0; k < 2 * i + 1; k++) {
+                    document.writeln("&nbsp* ");
+                }
+                document.writeln("</br>");
+            }
+
+            for (var i = 5; i > 0; i--) {
+                for (var j = 6; j >= i; j--) {
+                    document.writeln("&nbsp &nbsp");
+                }
+                for (var k = 0; k < 2 * i - 1; k++) {
+                    document.writeln("&nbsp* ");
+                }
+                document.writeln("</br>")
+            }
+        </script>
+    </div>
+    <div class="triangle1" >
+        <script>
+        //空心菱形
+        document.write("空心菱形");
+        document.write("</br>");
+        for (var i = 1; i <= 6; i++) {
+            for (var j = 1; j <= 6 - i; j++) {
+                document.write("&nbsp &nbsp")
+            }
+            for (var j = 1; j <= 2 * i - 1; j++) {
+                if (j == 1 || j == 2 * i - 1) {
+                    document.write("&nbsp*")
+                }
+                else {
+                    document.write("&nbsp &nbsp")
+                }
+            }
+            document.write("<br/>")
+        }
+        for (var i = 5; i >= 1; i--) {
+            for (var j = 1; j <= 6 - i; j++) {
+                document.write("&nbsp &nbsp")
+            }
+            for (var j = 1; j <= 2 * i - 1; j++) {
+                if (j == 1 || j == 2 * i - 1) {
+                    document.write("&nbsp*")
+                }
+                else {
+
+                    document.write("&nbsp &nbsp")
+                }
+            }
+            document.write("<br/>")
+        }
+        </script>
+        </div>
+    <div id="font"></div>
+
+    <script>
+			var str = '好好学习，天天向上';
+			var i = 0;
+            function typing(){
+				var divTyping = document.getElementById('font');
+					divTyping.innerHTML = str.slice(0, i++);
+					setTimeout('typing()', 1000);//递归调用
+			}
+			typing();
+    </script>
+
+</body>
+</html>
